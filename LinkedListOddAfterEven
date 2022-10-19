@@ -1,5 +1,6 @@
 
 Trust Me This code Pass all test cases of User Defined LinkedList.
+Here it have some Notice About code if you Don't Know about Generic in java You simply Remove this <Integer> every where in the code.
 
 Constraints :
 1 <= t <= 10^2
