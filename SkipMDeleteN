@@ -24,6 +24,16 @@ Sample Input 2 :
 Sample Output 2 :
 1 2 6 7
  
+PreRequicites........You Should have those Class.
+class Node<T> {
+    T data;
+    Node<T> next;
+
+    public Node(T data) {
+        this.data = data;
+
+    }
+}
  
  
  public static Node<Integer> skipMdeleteN(Node<Integer> head, int M, int N) {
