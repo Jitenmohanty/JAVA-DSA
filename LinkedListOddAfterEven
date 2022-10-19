@@ -1,0 +1,84 @@
+
+Trust Me This code Pass all test cases of User Defined LinkedList.
+
+Constraints :
+1 <= t <= 10^2
+0 <= M <= 10^5
+Where M is the size of the singly linked list.
+
+Time Limit: 1sec
+Sample Input 1 :
+1
+1 4 5 2 -1
+Sample Output 1 :
+1 5 4 2 
+Sample Input 2 :
+2
+1 11 3 6 8 0 9 -1
+10 20 30 40 -1
+Sample Output 2 :
+1 11 3 9 6 8 0
+10 20 30 40
+
+PreRequicites........You Should have those Class.
+class Node<T> {
+    T data;
+    Node<T> next;
+
+    public Node(T data) {
+        this.data = data;
+
+    }
+}
+
+//It Runs Well.
+public static Node<Integer> evenAfterOdd(Node<Integer> head) {
+        if (head == null) {
+        return head;
+        }
+        Node<Integer> curNode = head;
+        Node<Integer> oddh = null;
+        Node<Integer> oddT = null;
+        Node<Integer> Evenh = null;
+        Node<Integer> Event = null;
+        while (curNode != null) {
+            if (curNode.data % 2 != 0) {
+                if (oddh == null) {
+                    oddh = oddT= curNode;
+                    
+                } else {
+                    oddT.next = curNode;
+                    oddT = curNode;
+                }
+            }
+            if (curNode.data % 2 == 0) {
+                if (Evenh == null) {
+                    Evenh =    Event= curNode;
+       
+                } else {
+                    Event.next = curNode;
+                    Event = curNode;
+                }
+            }
+            curNode = curNode.next;
+        }
+
+        if (Evenh == null || oddh == null) {
+            if (Evenh == null) {
+                head = oddh;
+            } else if (oddh == null) {
+                head = Evenh;
+            } else {
+
+                head = Evenh;
+                Event.next = oddh;
+                oddT.next = null;
+            }
+            return head;
+        } else {
+
+            oddT.next = Evenh;
+            Event.next = null;
+            return oddh;
+        }
+    }
